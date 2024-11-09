@@ -14,5 +14,11 @@ public class Client {
         ((Composite) cart).add(ebook);
 
         cart.print();
+
+
+        // Create a (leaf) book and print it directly
+        System.out.println("--Leaf--");
+        Component book2 = new Book("Clean Code", 50.0f, 700.0f);
+        book2.print();
     }
 }
