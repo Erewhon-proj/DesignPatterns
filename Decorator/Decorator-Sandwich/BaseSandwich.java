@@ -1,4 +1,3 @@
-
 // ConcreteComponent class for the Decorator pattern
 public class BaseSandwich implements Sandwich    {
 

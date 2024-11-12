@@ -1,20 +1,21 @@
+// Client class that uses the Decorator pattern
 public class Client {
     public static void main(String[] args) {
-        
-        // Creo il ConcreteComponent di base
+
+        // Create a base text component
         Component baseText = new ConcreteComponent();
-        System.out.println("Testo di base: " + baseText.operation());
+        System.out.println("Text: " + baseText.operation());
 
-        // Aggiungo le virgolette con ConcreteDecoratorA
+        // Decorate the base text component with quotes
         Component quotedText = new ConcreteDecoratorA(baseText);
-        System.out.println("Testo con virgolette: " + quotedText.operation());
+        System.out.println("Text with quotes: " + quotedText.operation());
 
-        // Aggiungo asterischi attorno al testo con ConcreteDecoratorB
+        // Decorate the base text component with asterisks
         Component emphasizedText = new ConcreteDecoratorB(baseText);
-        System.out.println("Testo con asterischi: " + emphasizedText.operation());
+        System.out.println("Text with asterisks: " + emphasizedText.operation());
 
-        // Combinazione di entrambi i decoratori: virgolette e asterischi
+        // Decorate the base text component with quotes and asterisks
         Component fullyDecoratedText = new ConcreteDecoratorB(new ConcreteDecoratorA(baseText));
-        System.out.println("Testo con virgolette e asterischi: " + fullyDecoratedText.operation());
+        System.out.println("Text with quotes and asterisks: " + fullyDecoratedText.operation());
     }
 }
