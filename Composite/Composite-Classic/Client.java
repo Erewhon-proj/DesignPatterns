@@ -12,9 +12,10 @@ public class Client {
         // the reason for this is that the add method is not part of the Component interface
         ((Composite) cart).add(book);
         ((Composite) cart).add(ebook);
-
         cart.print();
 
+        ((Composite) cart).remove(book);
+        cart.print();
 
         // Create a (leaf) book and print it directly
         System.out.println("--Leaf--");
