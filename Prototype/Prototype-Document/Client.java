@@ -1,7 +1,9 @@
+import java.util.List;
+
 public class Client {
     public static void main(String[] args) {
         // Create an original order
-        Order baseOrder = new Order("Customer A", "Laptop, Keyboard", 1500.00);
+        Order baseOrder = new Order("Bryan", List.of("Computer", "Keyboard"), 1500.00);
 
         System.out.println("Original Order:");
         baseOrder.printOrder();
