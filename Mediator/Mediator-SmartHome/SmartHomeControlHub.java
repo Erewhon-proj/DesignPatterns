@@ -14,19 +14,17 @@ public class SmartHomeControlHub implements SmartHomeHub {
 
     @Override
     public void notify(Device device, String event) {
-        switch (event){
-            case "intrusionDetected":
-                System.out.println("Alarm: Intrusion detected");
-                for (Device d : devices) {
-                    if(d instanceof Light){
-                        d.execute("turnON");
-                    }else if (d instanceof AlarmSystem){
-                        d.execute("activate");
-                    }
+        if (event.equals("intrusionDetected")) {
+            System.out.println("Alarm: Intrusion detected");
+            for (Device d : devices) {
+                if (d instanceof Light) {
+                    d.execute("turnON");
+                } else if (d instanceof AlarmSystem) {
+                    d.execute("activate");
                 }
-                break;
-            default:
-                System.out.println("Unknown event");
+            }
+        } else {
+            System.out.println("Unknown event");
         }
     }
 
