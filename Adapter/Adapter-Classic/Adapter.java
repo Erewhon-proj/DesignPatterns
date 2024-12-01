@@ -16,3 +16,22 @@ public class Adapter implements Target{
         return (int) multiply_result;
     }
 }
+
+/* Alternatively I could have done it like this too
+
+    public class Adapter extends Adaptee implements Target {
+        private long a, b;
+
+        public Adapter(long a, long b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        @Override
+        public int request() {
+            long multiply_result = specificRequest(a, b);
+            return (int) multiply_result;
+        }
+    }
+
+*/
